@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 20px;
+}
+
+.movie-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.movie-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+
+.movie-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.movie-card:hover .movie-image {
+    transform: scale(1.15);
+}
+
+.watch-indicator {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.movie-card:hover .watch-indicator {
+    transform: scale(1.1);
+}
+
+.watch-indicator.watched {
+    background: #4CAF50;
+    color: white;
+}
+
+.watch-indicator.not-watched {
+    background: #9E9E9E;
+    color: white;
+}
+
+.watch-indicator svg {
+    width: 24px;
+    height: 24px;
+}
+
+.movie-info {
+    padding: 25px;
+}
+
+.movie-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.movie-date {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.movie-details {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease, margin-top 0.4s ease;
+    margin-top: 0;
+}
+
+.movie-card:hover .movie-details {
+    opacity: 1;
+    max-height: 200px;
+    margin-top: 15px;
+}
+
+.watch-date,
+.watch-place {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.watch-date::before {
+    content: "📅";
+    position: absolute;
+    left: 0;
+}
+
+.watch-place::before {
+    content: "📍";
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .movies-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
