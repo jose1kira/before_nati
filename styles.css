@@ -63,19 +63,24 @@ h1 {
     transform: scale(1.15);
 }
 
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
 .watch-indicator {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    flex-shrink: 0;
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -112,11 +117,11 @@ h1 {
 }
 
 .movie-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: white;
-    margin-bottom: 8px;
     font-weight: 600;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex: 1;
 }
 
 .movie-date {
@@ -179,5 +184,14 @@ h1 {
     h1 {
         font-size: 2rem;
     }
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    color: rgb(44, 38, 26);
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
