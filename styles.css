@@ -46,6 +46,25 @@ h1 {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Glow effects inspired by movie poster colors */
+.movie-card[data-movie="sunrise"]:hover {
+    box-shadow: 0 15px 50px rgba(255, 200, 100, 0.6),
+                0 5px 20px rgba(255, 180, 80, 0.4),
+                0 0 0 2px rgba(255, 220, 150, 0.3);
+}
+
+.movie-card[data-movie="sunset"]:hover {
+    box-shadow: 0 15px 50px rgba(255, 140, 60, 0.6),
+                0 5px 20px rgba(255, 120, 40, 0.4),
+                0 0 0 2px rgba(255, 160, 80, 0.3);
+}
+
+.movie-card[data-movie="midnight"]:hover {
+    box-shadow: 0 15px 50px rgba(100, 80, 180, 0.6),
+                0 5px 20px rgba(80, 60, 160, 0.4),
+                0 0 0 2px rgba(120, 100, 200, 0.3);
+}
+
 .movie-image-container {
     position: relative;
     overflow: hidden;
@@ -89,7 +108,7 @@ h1 {
 }
 
 .watch-indicator.watched {
-    background: #4CAF50;
+    background: #E91E63;
     color: white;
 }
 
@@ -193,5 +212,40 @@ footer {
     color: rgb(44, 38, 26);
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+/* Eyes emoji animations */
+.eyes-emoji {
+    display: inline-block;
+    animation: eye-blink 5s ease-in-out infinite;
+    transition: transform 1.5s ease;
+}
+
+.eyes-emoji:hover {
+    animation: gentle-pulse 1s ease-in-out infinite;
+}
+
+@keyframes eye-blink {
+    0%, 96% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    96.5%, 97.5% {
+        opacity: 0.1;
+        transform: scaleY(0.1);
+    }
+    98%, 100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes gentle-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
 }
 
