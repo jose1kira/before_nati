@@ -207,7 +207,7 @@ h1 {
 
 .movie-card:hover .movie-details {
     opacity: 1;
-    max-height: 200px;
+    max-height: 300px;
     margin-top: 10px;
 }
 
@@ -231,6 +231,30 @@ h1 {
     content: "📍";
     position: absolute;
     left: 0;
+}
+
+.movie-link {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 6px;
+    padding-left: 20px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.movie-link::before {
+    content: "🔗";
+    position: absolute;
+    left: 0;
+}
+
+.movie-link:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(3px);
+    text-decoration: underline;
 }
 
 /* Responsive design */
